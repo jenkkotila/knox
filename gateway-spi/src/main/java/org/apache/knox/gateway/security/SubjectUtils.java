@@ -29,6 +29,7 @@ import java.util.Set;
  */
 public class SubjectUtils {
 
+  @SuppressWarnings("deprecation") // TODO: Replace with Subject.current() when minimum JDK is 18+
   public static Subject getCurrentSubject() {
     return Subject.getSubject( AccessController.getContext() );
   }

@@ -77,6 +77,7 @@ public class JWTAccessTokenAssertionFilter extends AbstractIdentityAssertionFilt
             : filterConfig.getInitParameter(JWTAccessTokenAssertionFilter.ISSUER);
   }
 
+  @SuppressWarnings("deprecation") // TODO: Replace with Subject.current() when minimum JDK is 18+
   @Override
   public void doFilter(ServletRequest request, ServletResponse response,
       FilterChain chain) throws IOException, ServletException {

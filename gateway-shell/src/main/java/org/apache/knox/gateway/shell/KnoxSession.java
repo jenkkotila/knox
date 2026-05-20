@@ -484,6 +484,7 @@ public class KnoxSession implements Closeable {
   }
 
   @SuppressForbidden
+  @SuppressWarnings("deprecation") // TODO: Replace with Subject.current() when minimum JDK is 18+
   public CloseableHttpResponse executeNow(HttpRequest request ) throws IOException {
     /* check for kerberos */
     if (isKerberos) {

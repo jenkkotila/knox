@@ -218,6 +218,7 @@ public class CommonIdentityAssertionFilter extends AbstractIdentityAssertionFilt
    * to the identity to be asserted as appropriate and create the provider specific
    * assertion token. Add the assertion token to the request.
    */
+  @SuppressWarnings("deprecation") // TODO: Replace with Subject.current() when minimum JDK is 18+
   @Override
   public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
       throws IOException, ServletException {

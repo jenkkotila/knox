@@ -1063,6 +1063,7 @@ public class TokenResource {
     return Boolean.parseBoolean(request.getParameter(KNOX_TOKEN_INCLUDE_GROUPS));
   }
 
+  @SuppressWarnings("deprecation") // TODO: Replace with Subject.current() when minimum JDK is 18+
   protected Set<String> groups() {
     Subject subject = Subject.getSubject(AccessController.getContext());
     Set<String> groups = subject.getPrincipals(GroupPrincipal.class).stream()

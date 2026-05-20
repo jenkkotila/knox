@@ -87,6 +87,7 @@ public abstract class AbstractIdentityAssertionFilter extends
    */
   public abstract String mapUserPrincipal(String principalName);
 
+  @SuppressWarnings("deprecation") // TODO: Replace with Subject.current() when minimum JDK is 18+
   protected void continueChainAsPrincipal(HttpServletRequestWrapper request, ServletResponse response,
       FilterChain chain, String mappedPrincipalName, String[] groups) throws IOException,
       ServletException {

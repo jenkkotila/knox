@@ -44,6 +44,7 @@ limitations under the License.
         <exclude name="SystemPrintln" />
         <exclude name="UseTryWithResources" />
         <exclude name="UseVarargs" />
+        <exclude name="TestClassWithoutTestCases" />
     </rule>
 
     <!--<rule ref="category/java/codestyle.xml" />-->
@@ -83,6 +84,8 @@ limitations under the License.
         <exclude name="MoreThanOneLogger" />
         <exclude name="NullAssignment" />
         <exclude name="ReturnEmptyArrayRatherThanNull" />
+        <exclude name="ReturnEmptyCollectionRatherThanNull" />
+        <exclude name="CloseResource" />
         <exclude name="UseProperClassLoader" />
     </rule>
     <rule ref="category/java/multithreading.xml">

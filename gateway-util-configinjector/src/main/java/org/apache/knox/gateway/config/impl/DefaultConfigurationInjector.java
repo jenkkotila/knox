@@ -89,9 +89,7 @@ public class DefaultConfigurationInjector implements ConfigurationInjector {
         }
       } else {
         try {
-          if( !field.isAccessible() ) {
-            field.setAccessible( true );
-          }
+          field.setAccessible( true );
           field.set( target, value );
         } catch( Exception e ) {
           throw new ConfigurationException( String.format( Locale.ROOT,
@@ -128,9 +126,7 @@ public class DefaultConfigurationInjector implements ConfigurationInjector {
         }
         args[ i ] = argValue;
       }
-      if( !method.isAccessible() ) {
-        method.setAccessible( true );
-      }
+      method.setAccessible( true );
       try {
         method.invoke( target, args );
       } catch( Exception e ) {

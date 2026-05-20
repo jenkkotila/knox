@@ -79,6 +79,7 @@ limitations under the License.
         <exclude name="EmptyIfStmt" />
         <exclude name="LoggerIsNotStaticFinal" />
         <exclude name="MissingBreakInSwitch" />
+        <exclude name="ImplicitSwitchFallThrough" />
         <exclude name="MissingSerialVersionUID" />
         <exclude name="MoreThanOneLogger" />
         <exclude name="NullAssignment" />

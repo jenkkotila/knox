@@ -745,6 +745,9 @@
                             <ignoredUnusedDeclaredDependencies>
                                 <ignoredUnusedDeclaredDependency>*</ignoredUnusedDeclaredDependency>
                             </ignoredUnusedDeclaredDependencies>
+                            <ignoredNonTestScopedDependencies>
+                                <ignoredNonTestScopedDependency>*</ignoredNonTestScopedDependency>
+                            </ignoredNonTestScopedDependencies>
                         </configuration>
                     </execution>
                 </executions>

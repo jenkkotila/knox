@@ -34,11 +34,11 @@ import java.security.cert.CertificateEncodingException;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.util.Date;
+import javax.security.auth.x500.X500Principal;
 
 import org.apache.commons.codec.binary.Base64;
 import org.apache.knox.gateway.i18n.GatewayUtilCommonMessages;
 import org.apache.knox.gateway.i18n.messages.MessagesFactory;
-import org.bouncycastle.asn1.x500.X500Name;
 import org.bouncycastle.asn1.x509.GeneralName;
 import org.bouncycastle.asn1.x509.GeneralNames;
 import org.bouncycastle.asn1.x509.Extension;
@@ -68,7 +68,7 @@ public class X509CertificateUtil {
 
       BigInteger serial = new BigInteger(64, new SecureRandom());
 
-      X500Name subject = new X500Name(dn);
+      X500Principal subject = new X500Principal(dn);
 
       X509v3CertificateBuilder certBuilder = new JcaX509v3CertificateBuilder(
           subject, serial, from, to, subject, pair.getPublic());

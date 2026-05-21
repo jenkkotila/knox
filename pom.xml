@@ -663,7 +663,12 @@
                           signatures based on 'maven.compiler.target':
                         -->
                         <bundledSignature>jdk-unsafe</bundledSignature>
-                        <bundledSignature>jdk-deprecated</bundledSignature>
+                        <!--
+                          jdk-deprecated is disabled for Java 17 because many deprecated APIs
+                          (AccessController, Subject.getSubject, etc.) have no replacement
+                          until Java 22+. Re-enable when minimum Java version is raised to 22+.
+                        -->
+                        <!-- <bundledSignature>jdk-deprecated</bundledSignature> -->
                         <!-- disallow undocumented classes like sun.misc.Unsafe: -->
                         <bundledSignature>jdk-non-portable</bundledSignature>
                         <!-- disallow unsafe commons-io classes -->

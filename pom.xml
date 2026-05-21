@@ -172,7 +172,7 @@
         <ben-manes.caffeine.version>2.8.8</ben-manes.caffeine.version>
         <buildnumber-maven-plugin.version>1.4</buildnumber-maven-plugin.version>
         <cglib.version>3.3.0</cglib.version>
-        <checkstyle.version>9.3</checkstyle.version>
+        <checkstyle.version>8.38</checkstyle.version>
         <cloudera-manager.version>7.8.1</cloudera-manager.version>
         <cloudera-manager-api-swagger.version>${cloudera-manager.version}</cloudera-manager-api-swagger.version>
         <commons-beanutils.version>1.9.4</commons-beanutils.version>
@@ -244,11 +244,11 @@
         <lang-tag.version>1.5</lang-tag.version>
         <libpam4j.version>5.1.0</libpam4j.version>
         <log4j2.version>2.17.1</log4j2.version>
-        <maven-checkstyle-plugin.version>3.2.0</maven-checkstyle-plugin.version>
+        <maven-checkstyle-plugin.version>3.1.1</maven-checkstyle-plugin.version>
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
         <maven-dependency-plugin.version>3.6.1</maven-dependency-plugin.version>
         <maven-enforcer-plugin.version>3.0.0-M3</maven-enforcer-plugin.version>
-        <maven-pmd-plugin.version>3.15.0</maven-pmd-plugin.version>
+        <maven-pmd-plugin.version>3.12.0</maven-pmd-plugin.version>
         <metrics.version>4.1.16</metrics.version>
         <mina.version>2.0.22</mina.version>
         <mockito.version>4.8.1</mockito.version>

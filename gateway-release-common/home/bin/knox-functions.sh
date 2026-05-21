@@ -177,7 +177,7 @@ function buildAppJavaOpts {
     fi
 
     # Add properties to enable Knox to run on JDK 17+
-    addAppJavaOpts " --add-exports java.base/sun.security.x509=ALL-UNNAMED --add-exports java.base/sun.security.pkcs=ALL-UNNAMED --add-exports java.naming/com.sun.jndi.ldap=ALL-UNNAMED --add-opens java.base/sun.security.util=ALL-UNNAMED"
+    addAppJavaOpts " --add-exports java.base/sun.security.x509=ALL-UNNAMED --add-exports java.base/sun.security.pkcs=ALL-UNNAMED --add-exports java.naming/com.sun.jndi.ldap=ALL-UNNAMED --add-opens java.base/sun.security.util=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.lang.reflect=ALL-UNNAMED"
 
     # echo "APP_JAVA_OPTS =" "${APP_JAVA_OPTS[@]}"
 }

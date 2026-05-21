@@ -77,14 +77,14 @@ public class JDBCKnoxShellTableBuilder extends KnoxShellTableBuilder {
 
   private void loadDriver() throws Exception {
     try {
-      Class.forName(driver).newInstance();
+      Class.forName(driver).getDeclaredConstructor().newInstance();
     } catch (ClassNotFoundException e) {
       System.out.println(String.format(Locale.US, "Unable to load the JDBC driver %s. Check your CLASSPATH.", driver));
       throw e;
     } catch (InstantiationException e) {
       System.out.println(String.format(Locale.US, "Unable to instantiate the JDBC driver %s", driver));
       throw e;
-    } catch (IllegalAccessException e) {
+    } catch (IllegalAccessException | NoSuchMethodException | java.lang.reflect.InvocationTargetException e) {
       System.out.println(String.format(Locale.US, "Not allowed to access the JDBC driver %s", driver));
       throw e;
     }

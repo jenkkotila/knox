@@ -33,8 +33,8 @@ public abstract class UrlRewriteStepDescriptorFactory {
   public static <T extends UrlRewriteStepDescriptor<?>> T create( String type ) {
     try {
       Class<? extends UrlRewriteStepDescriptor> descriptorClass = MAP.get( type );
-      return (T)descriptorClass.newInstance();
-    } catch( InstantiationException | IllegalAccessException e ) {
+      return (T)descriptorClass.getDeclaredConstructor().newInstance();
+    } catch( InstantiationException | IllegalAccessException | NoSuchMethodException | java.lang.reflect.InvocationTargetException e ) {
       throw new IllegalArgumentException( type );
     }
   }

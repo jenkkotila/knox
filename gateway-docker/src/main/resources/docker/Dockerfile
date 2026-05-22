@@ -13,7 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM openjdk:8-jre-alpine3.8
+FROM eclipse-temurin:17-jre-alpine
+
 MAINTAINER Apache Knox <dev@knox.apache.org>
 
 # Make sure required packages are available

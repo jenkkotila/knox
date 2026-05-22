@@ -71,9 +71,7 @@ public class ConfigurationAdapterFactory {
         throw new ConfigurationException( "No configuration adapter found for config type " + configType.getName() );
       }
       Constructor c = findConstructorForConfigType( adapterType, configType );
-      if( !c.isAccessible() ) {
-        c.setAccessible( true );
-      }
+      c.setAccessible( true );
       Object adapter = c.newInstance( config );
       return ConfigurationAdapter.class.cast( adapter );
     } catch( ConfigurationException e ) {

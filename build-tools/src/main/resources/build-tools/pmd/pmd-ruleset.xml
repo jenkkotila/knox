@@ -65,6 +65,7 @@ limitations under the License.
     <rule ref="category/java/errorprone.xml">
         <exclude name="AssignmentInOperand" />
         <exclude name="AssignmentToNonFinalStatic" />
+        <exclude name="AvoidAccessibilityAlteration" />
         <exclude name="AvoidBranchingStatementAsLastInLoop" />
         <exclude name="AvoidCatchingNPE" />
         <exclude name="AvoidCatchingThrowable" />
@@ -79,10 +80,14 @@ limitations under the License.
         <exclude name="EmptyIfStmt" />
         <exclude name="LoggerIsNotStaticFinal" />
         <exclude name="MissingBreakInSwitch" />
+        <exclude name="ImplicitSwitchFallThrough" />
         <exclude name="MissingSerialVersionUID" />
         <exclude name="MoreThanOneLogger" />
         <exclude name="NullAssignment" />
         <exclude name="ReturnEmptyArrayRatherThanNull" />
+        <exclude name="ReturnEmptyCollectionRatherThanNull" />
+        <exclude name="CloseResource" />
+        <exclude name="TestClassWithoutTestCases" />
         <exclude name="UseProperClassLoader" />
     </rule>
     <rule ref="category/java/multithreading.xml">

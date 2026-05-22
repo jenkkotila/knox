@@ -34,7 +34,7 @@ public abstract class UrlRewriteStepProcessorFactory {
   private UrlRewriteStepProcessorFactory() {
   }
 
-  public static UrlRewriteStepProcessor create( UrlRewriteStepDescriptor descriptor ) throws IllegalAccessException, InstantiationException {
+  public static UrlRewriteStepProcessor create( UrlRewriteStepDescriptor descriptor ) throws IllegalAccessException, InstantiationException, NoSuchMethodException, java.lang.reflect.InvocationTargetException {
     UrlRewriteStepProcessor processor;
     Map<String,Class<? extends UrlRewriteStepProcessor>> typeMap;
     typeMap = MAP.get( descriptor.getClass() );
@@ -50,7 +50,7 @@ public abstract class UrlRewriteStepProcessorFactory {
       if( processorClass == null ) {
         throw new IllegalArgumentException( type );
       } else {
-        processor = processorClass.newInstance();
+        processor = processorClass.getDeclaredConstructor().newInstance();
       }
     }
     return processor;

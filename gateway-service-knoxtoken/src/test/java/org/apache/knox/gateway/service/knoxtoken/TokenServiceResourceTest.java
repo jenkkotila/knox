@@ -213,7 +213,7 @@ public class TokenServiceResourceTest {
 
     if (StringUtils.isNotBlank(expectedSubjectDN)) {
       X509Certificate trustedCertMock = EasyMock.createMock(X509Certificate.class);
-      EasyMock.expect(trustedCertMock.getSubjectDN()).andReturn(new PrimaryPrincipal(expectedSubjectDN)).anyTimes();
+      EasyMock.expect(trustedCertMock.getSubjectX500Principal()).andReturn(new javax.security.auth.x500.X500Principal(expectedSubjectDN)).anyTimes();
       ArrayList<X509Certificate> certArrayList = new ArrayList<>();
       certArrayList.add(trustedCertMock);
       X509Certificate[] certs = {};

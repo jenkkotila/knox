@@ -112,12 +112,12 @@ public class DerbyDatabase implements Database {
   private void loadDriver(boolean networkServer) throws DerbyDatabaseException {
     final String driverToLoad = networkServer ? NETWORK_SERVER_DRIVER : EMBEDDED_DRIVER;
     try {
-      Class.forName(driverToLoad).newInstance();
+      Class.forName(driverToLoad).getDeclaredConstructor().newInstance();
     } catch (ClassNotFoundException e) {
       throw new DerbyDatabaseException("Unable to load the JDBC driver " + driverToLoad + ". Check your CLASSPATH.", e);
     } catch (InstantiationException e) {
       throw new DerbyDatabaseException("Unable to instantiate the JDBC driver " + driverToLoad, e);
-    } catch (IllegalAccessException e) {
+    } catch (IllegalAccessException | NoSuchMethodException | java.lang.reflect.InvocationTargetException e) {
       throw new DerbyDatabaseException("Not allowed to access the JDBC driver " + driverToLoad, e);
     }
   }

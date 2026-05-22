@@ -955,7 +955,7 @@ public class TokenResource {
     if (clientCertRequired) {
       X509Certificate cert = extractCertificate(request);
       if (cert != null) {
-        if (!allowedDNs.contains(cert.getSubjectDN().getName().replaceAll("\\s+", ""))) {
+        if (!allowedDNs.contains(cert.getSubjectX500Principal().getName().replaceAll("\\s+", ""))) {
           response = Response.status(Response.Status.FORBIDDEN)
                          .entity("{ \"Unable to get token - untrusted client cert.\" }")
                          .build();

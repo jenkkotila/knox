@@ -36,7 +36,7 @@ public abstract class UrlRewriteFunctionProcessorFactory {
   }
 
   public static UrlRewriteFunctionProcessor create( String name, UrlRewriteFunctionDescriptor descriptor )
-      throws IllegalAccessException, InstantiationException {
+      throws IllegalAccessException, InstantiationException, NoSuchMethodException, java.lang.reflect.InvocationTargetException {
     UrlRewriteFunctionProcessor processor;
     if( descriptor == null ) {
       descriptor = UrlRewriteFunctionDescriptorFactory.create( name );
@@ -54,7 +54,7 @@ public abstract class UrlRewriteFunctionProcessorFactory {
       if( processorClass == null ) {
         throw new IllegalArgumentException( name );
       } else {
-        processor = processorClass.newInstance();
+        processor = processorClass.getDeclaredConstructor().newInstance();
       }
     }
     return processor;
